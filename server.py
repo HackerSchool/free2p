@@ -1,14 +1,12 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import RPi.GPIO as GPIO
 
 HOST_NAME = ''
 PORT_NUMBER = 80
 
 wc_busy = False
 def isWCBusy():
-	global wc_busy
-
-	wc_busy = not wc_busy
-	return wc_busy
+	return GPIO.input(17)
 
 class RequestHandler(BaseHTTPRequestHandler):
 	def do_HEAD(s):
@@ -33,10 +31,16 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-	httpd = HTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
+        try:
+                GPIO.setmode(GPIO.BCM)
+                GPIO.setup(17, GPIO.IN)
+                
+                httpd = HTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
 
-	try:
-		httpd.serve_forever()
-	except KeyboardInterrupt:
-		pass
-	httpd.server_close()
+                try:
+                        httpd.serve_forever()
+                except KeyboardInterrupt:
+                        pass
+                httpd.server_close()
+        finally:
+                GPIO.cleanup()
