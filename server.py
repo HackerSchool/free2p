@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import RPi.GPIO as GPIO
 
 HOST_NAME = ''
-PORT_NUMBER = 80
+PORT_NUMBER = 8080
 
 wc_busy = False
 def isWCBusy():
@@ -35,8 +35,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
         try:
                 GPIO.setmode(GPIO.BCM)
-                GPIO.setup(17, GPIO.IN)
-                
+                GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)             
+
                 httpd = HTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
 
                 try:
