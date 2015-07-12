@@ -1,10 +1,10 @@
 
-const POLL_INTERVAL = 2000; // in milliseconds
+const POLL_PERIOD = 2000; // in milliseconds
 
 $( document ).ready(function() {
 
 	checkOccupation();
-	setInterval(function () {checkOccupation()}, POLL_INTERVAL);
+	setInterval(function () {checkOccupation()}, POLL_PERIOD);
 
 	function checkOccupation() {
 		$.get("occupation", function(data){

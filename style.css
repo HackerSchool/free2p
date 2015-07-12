@@ -4,4 +4,8 @@
 	height: 100px;
 	border-radius: 50%;
 	background-color: lightgray;
+	-webkit-transition: background-color 300ms ease-in;
+	-moz-transition: background-color 300ms ease-in;
+	-o-transition: background-color 300ms ease-in;
+	transition: background-color 300ms ease-in;
 }
