@@ -25,7 +25,9 @@ class RequestHandler(BaseHTTPRequestHandler):
 				s.wfile.write(bytes("free", "UTF-8"))
 
 		#if s.path == "/":
-		if s.path.endswith(("/", ".html", ".js")):
+		if s.path.endswith(("/", ".html", "css", ".js")):
+			if s.path == "/":
+				s.path = "/index.html"
 			s.end_headers()
 			s.wfile.write(bytes(open(s.path[1:]).read(), "UTF-8"))
 
