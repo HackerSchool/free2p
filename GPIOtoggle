@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "argument 'setup' -> use after a reboot"
+echo "any other argument toggles the pin"
+echo ""
+
+if [ "$1" == "setup" ]
+then
+	echo "4" > /sys/class/gpio/export
+	echo "out" > /sys/class/gpio/gpio4/direction
+else
+	value=$(cat /sys/class/gpio/gpio4/value)
+	echo "$((value==0))" > /sys/class/gpio/gpio4/value
+	echo -n "new pin value: "
+	cat /sys/class/gpio/gpio4/value
+fi
