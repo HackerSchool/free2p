@@ -4,9 +4,12 @@ import RPi.GPIO as GPIO
 HOST_NAME = ''
 PORT_NUMBER = 8080
 
-wc_busy = False
+def sensorEvent(channel):
+	global wc_busy 
+	wc_busy = GPIO.input(17)	
+
 def isWCBusy():
-	return GPIO.input(17)
+	return wc_busy
 
 class RequestHandler(BaseHTTPRequestHandler):
 	def do_HEAD(s):
@@ -33,10 +36,13 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
+        global wc_busy
         try:
                 GPIO.setmode(GPIO.BCM)
                 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)             
-
+                GPIO.add_event_detect(17, GPIO.BOTH, callback=sensorEvent)
+                wc_busy = GPIO.input(17)
+                
                 httpd = HTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
 
                 try:
