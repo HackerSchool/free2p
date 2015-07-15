@@ -1,4 +1,6 @@
+from socketserver import ThreadingMixIn
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
 import RPi.GPIO as GPIO
 
 HOST_NAME = ''
@@ -27,6 +29,13 @@ class RequestHandler(BaseHTTPRequestHandler):
 			else:
 				s.wfile.write(bytes("free", "UTF-8"))
 
+		if s.path == "/favblack.png":
+			s.send_header("Content-type", "image/png")
+			s.end_headers()
+			f = open("favblack.png", 'rb')
+			s.wfile.write(f.read())
+			f.close()
+
 		#if s.path == "/":
 		if s.path.endswith(("/", ".html", "css", ".js")):
 			if s.path == "/":
@@ -34,6 +43,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 			s.end_headers()
 			s.wfile.write(bytes(open(s.path[1:]).read(), "UTF-8"))
 
+class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+	pass
 
 if __name__ == '__main__':
         global wc_busy
@@ -43,7 +54,7 @@ if __name__ == '__main__':
                 GPIO.add_event_detect(17, GPIO.BOTH, callback=sensorEvent)
                 wc_busy = GPIO.input(17)
                 
-                httpd = HTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
+                httpd = ThreadedHTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
 
                 try:
                         httpd.serve_forever()

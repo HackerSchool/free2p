@@ -1,5 +1,5 @@
 
-const POLL_PERIOD = 2000; // in milliseconds
+const POLL_PERIOD = 5000; // in milliseconds
 
 $( document ).ready(function() {
 
