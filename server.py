@@ -29,20 +29,12 @@ class RequestHandler(BaseHTTPRequestHandler):
 			else:
 				s.wfile.write(bytes("free", "UTF-8"))
 
-		if s.path.endswith(".png"):
-			s.send_header("Content-type", "image/png")
-			s.end_headers()
-			f = open(s.path[1:], 'rb')
-			s.wfile.write(f.read())
-			f.close()
-
-		#if s.path == "/":
-		if s.path.endswith(("/", ".html", "css", ".js")):
+		if s.path.endswith(("/", ".html", "css", ".js", ".png")):
 			if s.path == "/":
 				s.path = "/index.html"
 			s.end_headers()
-			f = open(s.path[1:])
-			s.wfile.write(bytes(f.read(), "UTF-8"))
+			f = open(s.path[1:], 'rb')
+			s.wfile.write(f.read())
 			f.close()
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
