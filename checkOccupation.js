@@ -8,18 +8,15 @@ $( document ).ready(function() {
 	function checkOccupation() {
 		$.get("occupation", function(data){
 			if(data == "free") {
-			//	$("#status-light").css("background-color", "limegreen");
-				document.body.style.background="green";
-				favicon.change('/favgreen.png');
+			$("#mycoolstuff").css("background-color", "green");
+			favicon.change('/favgreen.png');
 		   		
 			} else if(data == "busy") {
-			//	$("#status-light").css("background-color", "red");
-				document.body.style.background="darkred";
-				favicon.change('/favred.png');
+			$("#mycoolstuff").css("background-color", "darkred");
+			favicon.change('/favred.png');
 			}
 		}).fail(function() {
-			//$("#status-light").css("background-color", "lightgray");
-			document.body.style.background="gray";
+			$("#mycoolstuff").css("background-color", "gray");
 			favicon.change('/favgray.png');
 		});
 	}
