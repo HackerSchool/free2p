@@ -9,15 +9,15 @@ $( document ).ready(function() {
 		$.get("occupation", function(data){
 			if(data == "free") {
 			$("#mycoolstuff").css("background-color", "green");
-			favicon.change('/favgreen.png');
+			favicon.change('images/favgreen.png');
 		   		
 			} else if(data == "busy") {
 			$("#mycoolstuff").css("background-color", "darkred");
-			favicon.change('/favred.png');
+			favicon.change('images/favred.png');
 			}
 		}).fail(function() {
 			$("#mycoolstuff").css("background-color", "gray");
-			favicon.change('/favgray.png');
+			favicon.change('images/favgray.png');
 		});
 	}
 });
