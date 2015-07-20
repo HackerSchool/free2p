@@ -14,13 +14,13 @@ $( document ).ready(function() {
 		   		
 			} else if(data == "busy") {
 			//	$("#status-light").css("background-color", "red");
-				document.body.style.background="red";
+				document.body.style.background="darkred";
 				favicon.change('/favred.png');
 			}
 		}).fail(function() {
 			//$("#status-light").css("background-color", "lightgray");
-			document.body.style.background="lightgray";
-			favicon.change('/favblack.png');
+			document.body.style.background="gray";
+			favicon.change('/favgray.png');
 		});
 	}
 });
