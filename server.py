@@ -2,9 +2,11 @@ from socketserver import ThreadingMixIn
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 import RPi.GPIO as GPIO
+from os import path
 
 HOST_NAME = ''
 PORT_NUMBER = 8080
+PATH = path.dirname(path.abspath(__file__)) + "/"
 
 def sensorEvent(channel):
 	global wc_busy 
@@ -33,7 +35,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 			if s.path == "/":
 				s.path = "/index.html"
 			s.end_headers()
-			f = open(s.path[1:], 'rb')
+			f = open(PATH + s.path[1:], 'rb')
 			s.wfile.write(f.read())
 			f.close()
 
