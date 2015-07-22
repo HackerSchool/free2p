@@ -3,17 +3,25 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 import RPi.GPIO as GPIO
 from os import path
+from sched import scheduler
+from time import time, sleep
 
 HOST_NAME = ''
 PORT_NUMBER = 8080
 PATH = path.dirname(path.abspath(__file__)) + "/"
+UPDATE_DELAY = 60
 
-def sensorEvent(channel):
+def sensorEvent(channel=0):
 	global wc_busy 
 	wc_busy = GPIO.input(17)	
 
+def timedUpdate():
+	global wc_busy
+	wc_busy = GPIO.input(17)
+	threading.Timer(UPDATE_DELAY, timedUpdate, ()).start()
+
 def isWCBusy():
-	return wc_busy
+	return not wc_busy
 
 class RequestHandler(BaseHTTPRequestHandler):
 	def do_HEAD(s):
@@ -45,19 +53,21 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
 	pass
 
 if __name__ == '__main__':
-        global wc_busy
-        try:
-                GPIO.setmode(GPIO.BCM)
-                GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)             
-                GPIO.add_event_detect(17, GPIO.BOTH, callback=sensorEvent)
-                wc_busy = GPIO.input(17)
-                
-                httpd = ThreadedHTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
+	global wc_busy
+	try:
+		GPIO.setmode(GPIO.BCM)
+		GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)	     
+		GPIO.add_event_detect(17, GPIO.BOTH, callback=sensorEvent)
+		
+		wc_busy = GPIO.input(17)
+	
+		threading.Timer(UPDATE_DELAY, timedUpdate, ()).start()
+		httpd = ThreadedHTTPServer((HOST_NAME, PORT_NUMBER), RequestHandler)
 
-                try:
-                        httpd.serve_forever()
-                except KeyboardInterrupt:
-                        pass
-                httpd.server_close()
-        finally:
-                GPIO.cleanup()
+		try:
+			httpd.serve_forever()
+		except KeyboardInterrupt:
+			pass
+		httpd.server_close()
+	finally:
+		GPIO.cleanup()
