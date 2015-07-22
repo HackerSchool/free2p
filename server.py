@@ -42,7 +42,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 		if s.path.endswith(("/", ".html", "css", ".js", ".png")):
 			if s.path == "/":
 				s.path = "/index.html"
-			elif s.path.endswith(".png"):
+			elif s.path.endswith((".png", ".js")):
 				s.send_header("Cache-Control", "max-age=86400, must-revalidate")
 			s.end_headers()
 			f = open(PATH + s.path[1:], 'rb')

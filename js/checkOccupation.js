@@ -2,7 +2,6 @@ var POLL_PERIOD = 2000; // in milliseconds
 
 $( document ).ready(function() {
 
-	checkOccupation();
 	setInterval(function () {checkOccupation();}, POLL_PERIOD);
 
 	function checkOccupation() {
