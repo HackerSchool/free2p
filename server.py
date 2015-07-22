@@ -21,7 +21,7 @@ def timedUpdate():
 	threading.Timer(UPDATE_DELAY, timedUpdate, ()).start()
 
 def isWCBusy():
-	return wc_busy
+	return not wc_busy
 
 class RequestHandler(BaseHTTPRequestHandler):
 	def do_HEAD(s):
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 	global wc_busy
 	try:
 		GPIO.setmode(GPIO.BCM)
-		GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)	     
+		GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)	     
 		GPIO.add_event_detect(17, GPIO.BOTH, callback=sensorEvent)
 		
 		wc_busy = GPIO.input(17)
