@@ -8,4 +8,9 @@ To make the server when the Raspberry Pi boots add the following line to your `/
 
 `(sleep 10; python3 path/to/server/folder/server.py) &`
 
-As an example, if the folder for the server is inside `/usr/bin` the you would add the line `(sleep 10; python3 /usr/bin/server.py) &`.
+As an example, if the folder for the server is inside `/usr/bin` the you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
+
+# Wiring
+
+You can check how to wire the sensor any time by adding `/help.png` to the end of the free2p URL or address.
+
