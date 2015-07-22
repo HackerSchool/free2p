@@ -17,7 +17,7 @@ $( document ).ready(function() {
 			}
 		}).fail(function() {
 			$("#mycoolstuff").css("background-color", "gray");
-			favicon.change('images/favgray.png');
+			favicon.change('images/favgray.png', '[DOWN]free2p');
 		});
 	}
 });
