@@ -25,6 +25,7 @@ We used a Raspberry A+ with a Wi-Fi dongle and connected it to the local network
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/1raspAplus.jpg" height="250">
 
 Our "door locked" sensor consists of two springs installed with screws that connect via two wires to the raspberry pi:
-<img src="https://github.com/HackerSchool/free2p/blob/master/media/2Lock.jpg" height="300">
-<img src="https://github.com/HackerSchool/free2p/blob/master/media/3Inside.jpg" height="300">
-https://github.com/HackerSchool/free2p/blob/master/media/4Outside.jpg
+<img src="https://github.com/HackerSchool/free2p/blob/master/media/2Lock.jpg" height="280">
+<img src="https://github.com/HackerSchool/free2p/blob/master/media/3Inside.jpg" height="280">
+<img src="https://github.com/HackerSchool/free2p/blob/master/media/4Outside.jpg" height="280">
+
