@@ -1,6 +1,6 @@
 # What is free2p?
 
-free2p is a Raspberry Pi based solution that allows you to know if a bathroom is occupied or not via a web browser.
+free2p is a Raspberry Pi based solution that allows you to know if a bathroom is occupied or not via a web browser.<br>
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/5free2p.PNG" width="350" >
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/6busy2p.PNG" width="350" >
 
