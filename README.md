@@ -28,4 +28,4 @@ Our "door locked" sensor consists of two springs installed with screws that conn
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/2Lock.jpg" height="280">
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/3Inside.jpg" height="280">
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/4Outside.jpg" height="280">
-
+(The raspberry pi is inside the white box. The spring wires go trough the wall and straight into the box)
