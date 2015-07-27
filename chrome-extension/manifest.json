@@ -2,6 +2,9 @@
   "name": "free2p",
   "version": "1.0.0",
   "description": "Can I p?",
+  "icons": { "16": "unknown.png",
+             "32": "unknown.png",
+            "128": "unknown.png" },
   "background": {
     "persistent": false,
     "scripts": ["jquery.js", "background.js"]
