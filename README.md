@@ -2,26 +2,23 @@
 
 free2p is a Raspberry Pi based solution that allows you to know if a bathroom is occupied or not via a web browser.
 <br>
+Pee at will :)
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/5free2p.PNG" width="350" >
+Do not come in here!
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/6busy2p.PNG" width="350" >
 
-# Making the server run at boot
+# But, why free2p?
 
-To make the server when the Raspberry Pi boots add the following line to your `/etc/rc.local` file before the `exit 0` line:
+Following up on a long-term relationship with [Landing.jobs](https://landing.jobs) we decided they needed a proper WC warning system as their ranks grow in our hometown: good old Lisbon.
 
-`(sleep 10; python3 path/to/server/folder/server.py) &`
+Landing.jobs team lost count on the amount of times someone was got up from their desk space to go to the WC only to find out someone else was occupying the "Brain room" and, therefore, they called in the A-team. Sorry, [HackerSchool](http://hackerschool.io) for the win :)
 
-As an example, if the folder for the server is inside `/usr/bin` the you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
+Final result? See for yourself, check what's the [Landing.jobs WC status](http://wc.landing.jobs).
 
-# Wiring
-<table>
-    <tr>
-        <td><img src="https://github.com/HackerSchool/free2p/blob/master/help.png" height="280" ></td>
-        <td>You can check how to wire the sensor any time by adding `/help.png` to the end of the free2p URL or address.</td>
-    </tr>
-</table>
+Go ahead and setup your own free2p installation.
 
-# Our physical setup
+# The physical setup
+
 We used a Raspberry A+ with a Wi-Fi dongle and connected it to the local network:
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/1raspAplus.jpg" height="250">
 
@@ -32,3 +29,22 @@ Our "door locked" sensor consists of two springs installed with screws that conn
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/4Outside.jpg" height="250">
 <br>
 (The raspberry pi is inside the white box. The spring wires go trough the wall and straight into the box)
+
+# Wiring setup
+
+<table>
+    <tr>
+        <td><img src="https://github.com/HackerSchool/free2p/blob/master/help.png" height="280" ></td>
+        <td>You can check how to wire the sensor any time by adding `/help.png` to the end of the free2p URL or address.</td>
+    </tr>
+</table>
+
+# Making the server run at boot
+
+To make the server when the Raspberry Pi boots add the following line to your `/etc/rc.local` file before the `exit 0` line:
+
+`(sleep 10; python3 path/to/server/folder/server.py) &`
+
+As an example, if the folder for the server is inside `/usr/bin` the you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).
