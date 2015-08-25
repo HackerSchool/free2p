@@ -8,11 +8,11 @@ $( document ).ready(function() {
 		$.get("occupation", function(data){
 			if(data == "free") {
 			$("#mycoolstuff").css("background-color", "green");
-			favicon.change('images/favgreen.png', 'Free2p');
+			favicon.change('images/favgreen.png', 'free2p');
 		   		
 			} else if(data == "busy") {
 			$("#mycoolstuff").css("background-color", "darkred");
-			favicon.change('images/favred.png','Busy2p');
+			favicon.change('images/favred.png','busy2p');
 			}
 		}).fail(function() {
 			$("#mycoolstuff").css("background-color", "gray");
