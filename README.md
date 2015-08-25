@@ -2,16 +2,16 @@
 
 free2p is a Raspberry Pi based solution that allows you to know if a bathroom is occupied or not via a web browser.
 <br>
-Pee at will :)
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/5free2p.PNG" width="350" >
-Do not come in here!
+Pee at will :)
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/6busy2p.PNG" width="350" >
+Do not come in here!
 
 # But, why free2p?
 
 Following up on a long-term relationship with [Landing.jobs](https://landing.jobs) we decided they needed a proper WC warning system as their ranks grow in our hometown: good old Lisbon.
 
-Landing.jobs team lost count on the amount of times someone was got up from their desk space to go to the WC only to find out someone else was occupying the "Brain room" and, therefore, they called in the A-team. Sorry, [HackerSchool](http://hackerschool.io) for the win :)
+The Landing.jobs team lost count on the amount of times someone got up from their desk space to go to the WC only to find out someone else was occupying the "Brain room" and, therefore, they called in the A-team. Sorry, [HackerSchool](http://hackerschool.io) for the win :)
 
 Final result? See for yourself, check what's the [Landing.jobs WC status](http://wc.landing.jobs).
 
