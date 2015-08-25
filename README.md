@@ -42,10 +42,10 @@ Our "door locked" sensor consists of two springs installed with screws that conn
 
 # Making the server run at boot
 
-To make the server when the Raspberry Pi boots add the following line to your `/etc/rc.local` file before the `exit 0` line:
+To make the server run when the Raspberry Pi boots add the following line to your `/etc/rc.local` file before the `exit 0` line:
 
 `(sleep 10; python3 path/to/server/folder/server.py) &`
 
-As an example, if the folder for the server is inside `/usr/bin` the you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
+As an example, if the folder for the server is inside `/usr/bin` then you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
 
-Released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Released under the [GNU Affero General Public License v3.0](http://choosealicense.com/licenses/agpl-3.0/).
