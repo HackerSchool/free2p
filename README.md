@@ -4,6 +4,7 @@ free2p is a Raspberry Pi based solution that allows you to know if a bathroom is
 <br>
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/5free2p.PNG" width="350" >
 Pee at will :)
+<br>
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/6busy2p.PNG" width="350" >
 Do not come in here!
 
