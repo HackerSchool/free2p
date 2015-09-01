@@ -33,7 +33,7 @@ The installation is simple:
 5. Select the "chrome-extension" folder from the code you downloaded
 6. Click on the link "Options" on the newly added "free2p" section
 7. Make sure the API URL is correct
-8. Enjoy!
+8. Enjoy! (but only when it's green :b)
 
 # The physical setup
 
