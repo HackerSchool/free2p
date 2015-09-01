@@ -38,7 +38,7 @@ function updateState() {
                 break;
               default:
                 icon = 'unknown.png';
-                msg = '';
+                msg = 'proceed with caution (server down)';
             }
 
             chrome.browserAction.setIcon({ path: icon });
