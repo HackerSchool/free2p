@@ -22,7 +22,7 @@ Go ahead and setup your own free2p installation.
 
 The Chrome extension adds an icon next to Chrome's search bar, indicating the bathroom's occupation status.
 
-<img src="https://github.com/HackerSchool/free2p/blob/master/media/chrome-extension">
+<img src="https://github.com/HackerSchool/free2p/blob/master/media/chrome-extension.png">
 
 The installation is simple:
 
