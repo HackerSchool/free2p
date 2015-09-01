@@ -18,6 +18,23 @@ Final result? See for yourself, check the [Landing.jobs' WC status](http://wc.la
 
 Go ahead and setup your own free2p installation.
 
+# Chrome extension installation
+
+The Chrome extension adds an icon next to Chrome's search bar, indicating the bathroom's occupation status.
+
+<img src="https://github.com/HackerSchool/free2p/blob/master/media/chrome-extension">
+
+The installation is simple:
+
+1. [Download](https://github.com/HackerSchool/free2p/archive/master.zip) the code and unzip it
+2. Go to Settings -> Extensions
+3. Activate "Developer mode" checkbox
+4. Click "Load unpacked extension..."
+5. Select the "chrome-extension" folder from the code you downloaded
+6. Click on the link "Options" on the newly added "free2p" section
+7. Make sure the API URL is correct
+8. Enjoy!
+
 # The physical setup
 
 We used a Raspberry A+ with a Wi-Fi dongle and connected it to the local network:
