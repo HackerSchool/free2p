@@ -1,4 +1,4 @@
-var URL = 'http://192.168.0.111:8080/occupation';
+var URL = 'http://wc.landing.jobs/occupation';
 
 
 function main() {

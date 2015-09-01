@@ -14,7 +14,7 @@ Following up on a long-term relationship with [Landing.jobs](https://landing.job
 
 The Landing.jobs team lost count on the amount of times someone got up from their desk space to go to the WC only to find out someone else was occupying the "Brain room" and, therefore, they called in the A-team. Sorry, [HackerSchool](http://hackerschool.io) for the win :)
 
-Final result? See for yourself, check what's the [Landing.jobs WC status](http://wc.landing.jobs).
+Final result? See for yourself, check the [Landing.jobs' WC status](http://wc.landing.jobs).
 
 Go ahead and setup your own free2p installation.
 
@@ -47,5 +47,7 @@ To make the server run when the Raspberry Pi boots add the following line to you
 `(sleep 10; python3 path/to/server/folder/server.py) &`
 
 As an example, if the folder for the server is inside `/usr/bin` then you would add the line `(sleep 10; python3 /usr/bin/free2p/server.py) &`.
+
+# License
 
 Released under the [GNU Affero General Public License v3.0](http://choosealicense.com/licenses/agpl-3.0/).
