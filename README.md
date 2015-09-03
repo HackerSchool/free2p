@@ -40,7 +40,7 @@ The installation is simple:
 We used a Raspberry A+ with a Wi-Fi dongle and connected it to the local network:
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/1raspAplus.jpg" height="250">
 
-Our "door locked" sensor consists of two springs installed with screws that connect via two wires to the raspberry pi:
+Our "door locked" sensor consists of two springs installed with screws that connect via two wires to the raspberry pi. When you lock the door the bolt touches both springs and, because it's made of metal, connects the two wires, closing the circuit.
 <br>
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/2Lock.jpg" height="250">
 <img src="https://github.com/HackerSchool/free2p/blob/master/media/3Inside.jpg" height="250">
